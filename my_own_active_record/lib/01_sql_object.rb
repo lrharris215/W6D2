@@ -4,6 +4,9 @@ require 'active_support/inflector'
 # of this project. It was only a warm up.
 
 class SQLObject
+
+  
+
   def self.columns
     # ...
   end
@@ -12,11 +15,13 @@ class SQLObject
   end
 
   def self.table_name=(table_name)
-    # ...
+    @@table_name = table_name
+    
   end
 
   def self.table_name
-    # ...
+    @@table_name ||= self.name.tableize
+   
   end
 
   def self.all
@@ -32,6 +37,7 @@ class SQLObject
   end
 
   def initialize(params = {})
+    
     # ...
   end
 
